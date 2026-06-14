@@ -1,3 +1,6 @@
+
+npx plugins add vercel/vercel-plugin
+
 # Mujtaba Portfolio
 
 Advanced personal portfolio website for Mujtaba, a MERN Stack Developer.
