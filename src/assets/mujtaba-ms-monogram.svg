@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Mujtaba Sekandari logo</title>
+  <desc id="desc">A compact MS monogram.</desc>
+  <defs>
+    <linearGradient id="ms-silver" x1="14" x2="50" y1="18" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="0.44" stop-color="#cbd5e1" />
+      <stop offset="1" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="ms-blue" x1="48" x2="86" y1="18" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#93c5fd" />
+      <stop offset="0.5" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="ms-shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#020617" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <g filter="url(#ms-shadow)">
+    <text x="7" y="67" font-family="Georgia, Times New Roman, serif" font-size="58" font-weight="700" letter-spacing="-5" fill="url(#ms-silver)" stroke="#0f172a" stroke-width="1.4">M</text>
+    <text x="45" y="70" font-family="Georgia, Times New Roman, serif" font-size="60" font-weight="700" letter-spacing="-4" fill="url(#ms-blue)" stroke="#0f172a" stroke-width="1.4">S</text>
+    <path d="M16 75c16-5 32-5 48 0 7 2 13 2 18-1-7 7-18 10-31 7-12-3-23-5-35-1z" fill="url(#ms-silver)" opacity="0.72" />
+  </g>
+</svg>
