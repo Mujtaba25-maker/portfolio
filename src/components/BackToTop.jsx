@@ -20,7 +20,7 @@ function BackToTop() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-6 right-6 z-50 grid size-12 place-items-center rounded-2xl bg-cyan-300 text-slate-950 shadow-2xl shadow-cyan-950/40"
+          className="fixed bottom-6 right-6 z-50 grid size-12 place-items-center rounded-xl bg-blue-500 text-white shadow-2xl shadow-blue-950/35"
           aria-label="Back to top"
         >
           <ArrowUp size={20} />

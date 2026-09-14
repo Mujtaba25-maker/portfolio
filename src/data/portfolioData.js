@@ -1,183 +1,23 @@
-import {
-  BarChart3,
-  Code2,
-  Database,
-  Globe2,
-  KeyRound,
-  Layers3,
-  LockKeyhole,
-  Server,
-  UsersRound
-} from "lucide-react";
+import { BarChart3, BookOpen, BriefcaseBusiness, Code2, Database, GraduationCap, Globe2, KeyRound, Layers3, LockKeyhole, Server, UsersRound } from "lucide-react";
 
-export const personalInfo = {
-  name: "Mujtaba",
-  title: "MERN Stack Developer",
-  headline: "Turning ideas into fast, secure, and professional web applications.",
-  email: "mujtabasekandari470@gmail.com",
-  location: "Kabul, Afghanistan",
-  github: "https://github.com/Mujtaba25-maker",
-  linkedin: "https://www.linkedin.com/in/mujtaba-sekandari-b76371410",
-  resume: "/resume/Mujtaba-Resume.pdf"
-};
+export const personalInfo = { name: "Mujtaba Sekandari", title: "Full-Stack Developer", headline: "Turning ideas into fast, secure, and professional web applications.", email: "mujtabasekandari470@gmail.com", location: "Kabul, Afghanistan", github: "https://github.com/Mujtaba25-maker", linkedin: "https://www.linkedin.com/in/mujtaba-sekandari-b76371410", resume: "/resume/Mujtaba-Resume.pdf", resumeFileName: "Mohammad-Mujtaba-Sekandari-Full-Stack-Developer-Resume.pdf" };
 
-export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" }
-];
+export const navLinks = [{ label: "Home", href: "#top" }, { label: "About", href: "#about" }, { label: "Projects", href: "#projects" }, { label: "Experience", href: "#experience" }, { label: "Skills", href: "#skills" }, { label: "Services", href: "#services" }, { label: "Contact", href: "#contact" }];
 
-export const stats = [
-  { label: "Projects Completed", value: 18, suffix: "+" },
-  { label: "Technologies Used", value: 28, suffix: "+" },
-  { label: "Years Learning / Experience", value: 3, suffix: "+" },
-  { label: "Client / Team Projects", value: 6, suffix: "+" }
-];
+export const stats = [{ label: "Full-Stack Development", description: "Frontend, backend, and database work connected into complete web applications." }, { label: "Database-Driven Systems", description: "Relational database thinking for business records, dashboards, and workflows." }, { label: "REST API Development", description: "Structured endpoints, validation, authentication patterns, and maintainable routing." }, { label: "Business Applications", description: "Practical systems for operations, services, and information management." }];
 
-export const skills = [
-  {
-    title: "Frontend",
-    icon: Code2,
-    items: ["HTML", "CSS", "Bootstrap", "React", "JavaScript", "TypeScript", "Tailwind CSS", "Redux"]
-  },
-  {
-    title: "Backend",
-    icon: Server,
-    items: ["Node.js", "Express.js", "Next.js", "REST APIs", "JWT Auth"]
-  },
-  {
-    title: "Database",
-    icon: Database,
-    items: ["MongoDB", "Mongoose", "PostgreSQL", "Indexes", "Schema Design"]
-  },
-  {
-    title: "Tools",
-    icon: Layers3,
-    items: ["Git", "GitHub", "Postman", "Vercel", "Render", "Docker"]
-  }
-];
+export const skills = [{ title: "Frontend", icon: Code2, items: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive Web Design"] }, { title: "Backend", icon: Server, items: ["PHP", "Laravel", "Python", "Django", "REST APIs"] }, { title: "Database", icon: Database, items: ["MySQL", "Oracle Database", "SQL", "Relational Database Design", "Database Modeling"] }, { title: "Tools / Development", icon: Layers3, items: ["Git", "GitHub", "VS Code", "Postman", "Composer", "npm"] }];
 
-export const projects = [
-  {
-    title: "Hanzalah Supermarket",
-    category: "Dashboard",
-    icon: BarChart3,
-    description:
-      "A deployed supermarket dashboard for managing daily retail operations with a clean JavaScript-based interface.",
-    stack: ["JavaScript", "Vercel", "Dashboard", "Retail System"],
-    features: ["Live deployment", "Supermarket workflow", "Admin-style screens", "Responsive layout"],
-    liveUrl: "https://hanzalah-supermarket.vercel.app",
-    githubUrl: "https://github.com/Mujtaba25-maker/Hanzalah-Supermarket",
-    accent: "from-cyan-400 to-blue-600"
-  },
-  {
-    title: "Educore",
-    category: "Frontend",
-    icon: Globe2,
-    description:
-      "A responsive educational platform built with React and Tailwind CSS, including routing, slider interactions, and modern landing pages.",
-    stack: ["React", "Tailwind CSS", "Router DOM", "Swiper", "JavaScript"],
-    features: ["Responsive education UI", "React routing", "Swiper slider", "Live Vercel deployment"],
-    liveUrl: "https://educoremujtaba.vercel.app/",
-    githubUrl: "https://github.com/Mujtaba25-maker/Educore",
-    accent: "from-emerald-300 to-teal-600"
-  },
-  {
-    title: "MonksHub",
-    category: "Frontend",
-    icon: UsersRound,
-    description:
-      "A deployed JavaScript web project with a modern frontend interface, clean content sections, and responsive presentation.",
-    stack: ["JavaScript", "React", "Vercel", "Responsive UI"],
-    features: ["Live website", "Modern sections", "Responsive frontend", "GitHub source"],
-    liveUrl: "https://monks-hub-lemon.vercel.app",
-    githubUrl: "https://github.com/Mujtaba25-maker/MonksHub",
-    accent: "from-sky-300 to-indigo-600"
-  },
-  {
-    title: "Main Project",
-    category: "Frontend",
-    icon: Code2,
-    description:
-      "An HTML-based frontend project showing layout fundamentals, page structure, and practical styling work.",
-    stack: ["HTML", "CSS", "Frontend", "Responsive Layout"],
-    features: ["HTML structure", "CSS styling", "Static page layout", "Repository source"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Mujtaba25-maker/main-project",
-    accent: "from-violet-300 to-cyan-500"
-  }
-];
+export const projects = [{ title: "China-Afghanistan Logistics MIS", slug: "china-afghanistan-logistics-mis", category: "Business System", icon: BriefcaseBusiness, description: "A full-stack logistics management system designed to centralize customer, purchasing, shipment, warehouse, and operational workflows between China and Afghanistan.", problem: "Logistics teams need structured records and connected workflows instead of scattered manual tracking across customers, purchasing, shipments, and warehouses.", built: "Built a Laravel-based MIS structure with business modules for CRM-style records, purchase and shipment workflows, warehouse tracking, operational dashboards, and role-aware administration.", role: "Full-stack developer focused on business workflow structure, backend models, database organization, admin screens, and maintainable implementation.", stack: ["Laravel", "PHP", "Filament", "MySQL", "Tailwind CSS"], features: ["CRM records", "Leads and customers", "Consignees and suppliers", "Purchase orders", "Shipments", "Warehouse workflows", "Operational dashboards", "Role-based access"], status: "Flagship business system", caseStudy: { overview: "This MIS is the flagship business-systems project because it reflects structured full-stack work: practical workflows, relational data, and admin interfaces for operations.", goals: ["Centralize logistics records", "Reduce manual workflow fragmentation", "Keep operational data easier to search and maintain", "Support database-driven business processes"], architecture: "Laravel and Filament provide the application and admin structure, while MySQL stores relational business records for logistics workflows.", database: "The project emphasizes relational data modeling for customers, consignees, suppliers, purchase orders, shipments, and warehouses.", challenges: ["Turning real operational concepts into clear modules", "Keeping workflows understandable for daily business use", "Structuring related records without overcomplicating the interface"], solutions: ["Separated core business entities into focused modules", "Used admin-style screens for repeatable workflows", "Kept project language business-focused and data-driven"] }, accent: "from-blue-500 to-cyan-800" }, { title: "Service Marketplace Platform", slug: "service-marketplace-platform", category: "Business System", icon: UsersRound, description: "A marketplace-style web application concept for organizing service listings, users, and practical client-provider workflows.", problem: "Service businesses need a clear way to present offers, collect interest, and guide users toward the right provider or workflow.", built: "Structured the product presentation around discoverable services, user-focused navigation, responsive screens, and maintainable web application sections.", role: "Full-stack developer with emphasis on workflow design, frontend clarity, and backend-ready data structure.", stack: ["React", "JavaScript", "Responsive UI", "REST API Planning"], features: ["Service listings", "User-focused navigation", "Responsive layouts", "Marketplace workflow planning"], status: "Portfolio business project", accent: "from-sky-500 to-blue-800" }, { title: "Home Management Information System", slug: "home-management-information-system", category: "Business System", icon: Database, description: "An information system concept focused on organizing household or property-related records through clean forms, dashboards, and database-driven workflows.", problem: "Manual home or property records can become hard to track without a structured system for categories, records, and summaries.", built: "Designed the portfolio presentation around practical MIS thinking: records, data categories, dashboards, and a clean interface for repeated use.", role: "Developer focused on database modeling direction, interface structure, and practical management workflows.", stack: ["PHP", "Laravel", "MySQL", "Database Modeling"], features: ["Structured records", "Management dashboard direction", "Relational data planning", "Responsive admin-style UI"], status: "Portfolio MIS project", accent: "from-emerald-400 to-slate-800" }, { title: "AI Data Assistant", slug: "ai-data-assistant", category: "Learning Project", icon: BarChart3, description: "A secondary learning project exploring how AI and data analysis concepts can support clearer information review and decision-making.", problem: "Data-heavy work benefits from better summaries and exploratory assistance, especially when information must be reviewed quickly.", built: "Presented as a learning-focused project so AI remains secondary to the primary full-stack developer identity.", role: "Developer exploring AI/data concepts alongside Python and backend learning.", stack: ["Python", "Data Analysis", "AI Concepts"], features: ["Data exploration direction", "Assistant-style workflow thinking", "Python learning context"], status: "Current learning project", accent: "from-indigo-500 to-slate-800" }, { title: "Hanzalah Supermarket", slug: "hanzalah-supermarket", category: "Dashboard", icon: BarChart3, description: "A retail operations dashboard built to help a supermarket present daily management screens in a clear, responsive, admin-style interface.", problem: "Small retail teams need a simple dashboard experience for reviewing store operations without confusing navigation.", built: "Designed the dashboard UI, organized admin sections, added responsive layouts, and deployed the finished project on Vercel.", role: "Frontend developer for the dashboard interface and deployment-ready presentation.", stack: ["JavaScript", "Vercel", "Dashboard", "Retail UI"], features: ["Retail workflow screens", "Admin dashboard layout", "Responsive navigation", "Production deployment"], liveUrl: "https://hanzalah-supermarket.vercel.app", githubUrl: "https://github.com/Mujtaba25-maker/Hanzalah-Supermarket", accent: "from-blue-500 to-slate-800" }, { title: "Educore", slug: "educore", category: "Frontend", icon: Globe2, description: "A modern education website built for course-style content, smooth page navigation, and a polished responsive learning platform presentation.", problem: "Education websites need trust, clear sections, and smooth browsing so visitors can quickly understand the learning offer.", built: "Built the React page structure, reusable content sections, routing, Tailwind styling, and interactive slider experience.", role: "Frontend developer for responsive sections, routing, and interaction polish.", stack: ["React", "Tailwind CSS", "Router DOM", "Swiper", "JavaScript"], features: ["Education landing pages", "React routing", "Reusable UI sections", "Live Vercel deployment"], liveUrl: "https://educoremujtaba.vercel.app/", githubUrl: "https://github.com/Mujtaba25-maker/Educore", accent: "from-emerald-300 to-teal-600" }, { title: "MonksHub", slug: "monkshub", category: "Frontend", icon: UsersRound, description: "A responsive web project focused on clean content structure, strong visual sections, and a deployable frontend experience.", problem: "Content-heavy websites need organized sections and strong responsive behavior so the message stays clear on every screen.", built: "Created the frontend layout, section hierarchy, responsive styling, and deployment-ready project structure.", role: "Frontend developer for section structure, responsive styling, and deployment presentation.", stack: ["JavaScript", "React", "Vercel", "Responsive UI"], features: ["Structured page sections", "Responsive frontend", "Live website", "GitHub source"], liveUrl: "https://monks-hub-lemon.vercel.app", githubUrl: "https://github.com/Mujtaba25-maker/MonksHub", accent: "from-sky-500 to-blue-800" }, { title: "Frontend Layout System", slug: "frontend-layout-system", category: "Frontend", icon: Code2, description: "A foundational frontend project showing semantic page structure, CSS layout control, and practical responsive styling.", problem: "Strong full-stack work starts with reliable frontend fundamentals: structure, spacing, readability, and maintainable CSS.", built: "Implemented the HTML structure, CSS styling, responsive page layout, and repository organization.", role: "Frontend developer focused on semantic structure and responsive layout practice.", stack: ["HTML5", "CSS3", "Frontend", "Responsive Layout"], features: ["HTML structure", "CSS styling", "Static page layout", "Repository source"], githubUrl: "https://github.com/Mujtaba25-maker/main-project", accent: "from-slate-600 to-blue-700" }];
 
-export const experiences = [
-  {
-    role: "MERN Stack Developer",
-    period: "2025 - Present",
-    description:
-      "Building full-stack applications with React, Next.js, Node.js, Express, MongoDB, and PostgreSQL, with focus on clean UI, API structure, authentication, and deployment."
-  },
-  {
-    role: "Freelance Web Developer",
-    period: "2024 - Present",
-    description:
-      "Creating responsive landing pages, dashboards, and business applications for real users with maintainable code and fast delivery."
-  },
-  {
-    role: "Full-Stack Project Builder",
-    period: "2023 - Present",
-    description:
-      "Designing practical portfolio projects that include user flows, reusable components, database models, and production-style interfaces."
-  }
-];
+export const experiences = [{ company: "UpSkill Bootcamp", location: "Kabul, Afghanistan", roles: [{ title: "Regular Employee", period: "Mar 4, 2026 – Present", description: "Continued into a regular role focused on practical web application work, business records, project implementation, and stronger development workflows." }, { title: "Intern", period: "Mar 1, 2025 – Mar 3, 2026", description: "Worked on practical software development tasks, structured data handling, web application support, and technical problem solving." }] }];
 
-export const services = [
-  {
-    title: "Full-Stack Web Development",
-    icon: Globe2,
-    description: "Complete web applications from frontend screens to backend APIs using MERN, Next.js, MongoDB, and PostgreSQL."
-  },
-  {
-    title: "Frontend Development",
-    icon: Code2,
-    description: "Responsive interfaces using HTML, CSS, Bootstrap, React, Tailwind CSS, dashboards, forms, and animations."
-  },
-  {
-    title: "Backend API Development",
-    icon: Server,
-    description: "Express.js and Next.js APIs with validation, clean routing, secure config, and scalable structure."
-  },
-  {
-    title: "Database Design",
-    icon: Database,
-    description: "MongoDB, Mongoose, and PostgreSQL database structures with indexes, relationships, and reliable modeling."
-  },
-  {
-    title: "Authentication Systems",
-    icon: KeyRound,
-    description: "JWT-based login flows, protected routes, role logic, and secure user session patterns."
-  },
-  {
-    title: "Dashboard Development",
-    icon: LockKeyhole,
-    description: "Admin dashboards with analytics cards, tables, filters, charts, and role-based workflows."
-  }
-];
+export const education = { studies: [{ title: "Computer Science Studies", details: ["7th Semester", "Database-focused academic area"] }], certifications: [{ title: "Certificate of Information Technology", details: [] }, { title: "Frontend Development Certificate", details: [] }, { title: "Backend Development Certificate", details: [] }] };
 
-export const testimonials = [
-  {
-    name: "Ahmad Rahimi",
-    role: "Startup Founder",
-    text: "Mujtaba understands business workflows and turns them into clean dashboards that are easy to use."
-  },
-  {
-    name: "Sara Noori",
-    role: "Project Collaborator",
-    text: "His React interfaces are polished, responsive, and organized. The code was easy for our team to continue."
-  },
-  {
-    name: "Omid Hashemi",
-    role: "Small Business Owner",
-    text: "The system felt professional from the first demo. Fast pages, clear forms, and exactly the features we needed."
-  }
-];
+export const services = [{ title: "Full-Stack Web Development", icon: Globe2, description: "Complete web applications from responsive frontend screens to backend APIs and relational databases." }, { title: "React Frontend Development", icon: Code2, description: "Responsive interfaces using React, JavaScript, HTML5, CSS3, Tailwind CSS, dashboards, forms, and accessible interactions." }, { title: "Laravel Development", icon: Server, description: "PHP and Laravel applications with clean routing, validation, authentication patterns, admin workflows, and maintainable structure." }, { title: "Django / Python Backend Development", icon: Server, description: "Python and Django backend development for structured web applications, APIs, and database-focused features." }, { title: "Relational Database Design", icon: Database, description: "Database design and modeling with MySQL, Oracle Database, SQL relationships, records, and business data structures." }, { title: "REST API Development", icon: KeyRound, description: "API endpoints with validation, organized resources, secure access patterns, and clear integration behavior." }, { title: "MIS / Dashboard Development", icon: LockKeyhole, description: "Admin dashboards and management information systems for operational data, tables, forms, and business workflows." }];
+
+export const professionalValues = [{ name: "Business Workflow Focus", role: "MIS, dashboards, and admin systems", text: "Projects are built around clear screens, practical user flows, and interfaces that make daily work easier to understand." }, { name: "Maintainable Full-Stack Structure", role: "Laravel, React, APIs, and databases", text: "I organize frontend sections, backend resources, and database entities so the application can grow without becoming difficult to maintain." }, { name: "Clear Communication", role: "Client and team collaboration", text: "I focus on understanding real requirements, explaining technical decisions clearly, and turning business needs into practical implementation steps." }];
+
+export const learning = [{ title: "Artificial Intelligence", icon: BookOpen, description: "Exploring AI concepts as a secondary learning area that supports better software thinking." }, { title: "Machine Learning and LLM Concepts", icon: BarChart3, description: "Learning the fundamentals without making AI the main professional identity of this portfolio." }, { title: "Advanced Python and Data Analysis", icon: GraduationCap, description: "Strengthening Python skills for backend development, analysis workflows, and future data-driven features." }, { title: "Cloud / Deployment", icon: Globe2, description: "Improving deployment knowledge for reliable web application delivery." }];
+
+export const developmentJourney = [{ title: "Frontend Foundations", text: "Built a base in HTML5, CSS3, JavaScript, responsive layouts, and React interfaces." }, { title: "Backend Development", text: "Expanded into PHP, Laravel, Python, Django, REST APIs, and authentication patterns." }, { title: "Full-Stack Development", text: "Connected frontend screens, backend logic, and relational databases into complete applications." }, { title: "Business / Production Systems", text: "Focused on practical MIS, dashboards, workflows, and database-driven business applications." }];

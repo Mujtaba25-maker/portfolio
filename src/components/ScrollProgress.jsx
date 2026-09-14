@@ -7,7 +7,7 @@ function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed left-0 top-0 z-[90] h-1 w-full origin-left bg-gradient-to-r from-cyan-300 via-emerald-300 to-violet-300"
+      className="fixed left-0 top-0 z-[90] h-1 w-full origin-left bg-gradient-to-r from-blue-500 via-emerald-400 to-slate-300"
     />
   );
 }

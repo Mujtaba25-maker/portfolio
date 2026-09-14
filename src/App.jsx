@@ -8,34 +8,11 @@ import Navbar from "./components/Navbar.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
 import Home from "./pages/Home.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import ProjectCaseStudy from "./pages/ProjectCaseStudy.jsx";
 
 function App() {
   const location = useLocation();
-
-  return (
-    <>
-      <LoadingScreen />
-      <ScrollProgress />
-      <CustomCursor />
-      <Navbar />
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={location.pathname}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </motion.main>
-      </AnimatePresence>
-      <Footer />
-      <BackToTop />
-    </>
-  );
+  return (<><LoadingScreen /><ScrollProgress /><CustomCursor /><Navbar /><AnimatePresence mode="wait"><motion.main key={location.pathname} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.35, ease: "easeOut" }}><Routes location={location}><Route path="/" element={<Home />} /><Route path="/projects/:slug" element={<ProjectCaseStudy />} /><Route path="*" element={<NotFound />} /></Routes></motion.main></AnimatePresence><Footer /><BackToTop /></>);
 }
 
 export default App;

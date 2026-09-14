@@ -23,11 +23,11 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
+  background: #08111f;
 }
 
 :root.light body {
-  background: #f8fafc;
+  background: #f5f7fb;
 }
 
 a,
@@ -38,21 +38,21 @@ textarea {
 }
 
 ::selection {
-  color: #020617;
-  background: #67e8f9;
+  color: #08111f;
+  background: #93c5fd;
 }
 
 .glass {
-  border: 1px solid rgb(255 255 255 / 0.1);
-  background: rgb(255 255 255 / 0.06);
-  box-shadow: 0 24px 80px rgb(0 0 0 / 0.28);
-  backdrop-filter: blur(24px);
+  border: 1px solid rgb(148 163 184 / 0.18);
+  background: linear-gradient(145deg, rgb(15 23 42 / 0.78), rgb(15 23 42 / 0.52));
+  box-shadow: 0 22px 70px rgb(2 6 23 / 0.34);
+  backdrop-filter: blur(22px);
 }
 
 .light .glass {
   border-color: rgb(15 23 42 / 0.1);
-  background: rgb(255 255 255 / 0.75);
-  box-shadow: 0 24px 80px rgb(15 23 42 / 0.12);
+  background: rgb(255 255 255 / 0.82);
+  box-shadow: 0 22px 70px rgb(15 23 42 / 0.1);
 }
 
 .grid-mask {
@@ -72,8 +72,40 @@ textarea {
   padding-block: 7rem;
 }
 
+.professional-shell {
+  background:
+    radial-gradient(circle at 18% 12%, rgb(37 99 235 / 0.18), transparent 27rem),
+    radial-gradient(circle at 86% 26%, rgb(16 185 129 / 0.12), transparent 24rem),
+    linear-gradient(135deg, #08111f 0%, #0f172a 48%, #111827 100%);
+}
+
+.light .professional-shell {
+  background:
+    radial-gradient(circle at 18% 12%, rgb(37 99 235 / 0.13), transparent 28rem),
+    radial-gradient(circle at 86% 26%, rgb(16 185 129 / 0.1), transparent 24rem),
+    linear-gradient(135deg, #f7f9fc 0%, #eef4ff 48%, #f4fbf8 100%);
+}
+
 @media (max-width: 768px) {
   .section-pad {
     padding-block: 5rem;
+  }
+}
+
+
+section { scroll-margin-top: 6rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .section-pad {
+    padding-block: 4rem;
   }
 }

@@ -1,0 +1,19 @@
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
+import { projects } from "../data/portfolioData.js";
+
+function ProjectCaseStudy() {
+  const { slug } = useParams();
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) return <MissingProject />;
+  const Icon = project.icon;
+  const caseStudy = project.caseStudy || {};
+  return (<section className="min-h-screen bg-[#08111f] px-5 pb-20 pt-32 text-white light:bg-[#f5f7fb] light:text-slate-950 sm:px-8"><div className="mx-auto max-w-5xl"><Link to="/#projects" className="inline-flex items-center gap-2 rounded-xl border border-slate-500/20 bg-white/[0.05] px-4 py-3 text-sm font-black text-slate-200 light:border-slate-900/10 light:bg-white light:text-slate-700"><ArrowLeft size={16} />Back to projects</Link><div className={"mt-8 rounded-lg bg-gradient-to-br p-6 " + project.accent}><div className="rounded-lg border border-white/30 bg-slate-950/30 p-6 backdrop-blur-sm"><Icon size={38} className="text-white" aria-hidden="true" /><p className="mt-5 text-sm font-black uppercase text-white/80">{project.category}</p><h1 className="mt-3 text-4xl font-black leading-tight text-white sm:text-5xl">{project.title}</h1><p className="mt-5 max-w-3xl text-lg leading-8 text-white/90">{project.description}</p></div></div><div className="mt-8 grid gap-6"><CaseBlock title="Project Overview" text={caseStudy.overview || project.description} /><CaseBlock title="Problem" text={project.problem} /><CaseBlock title="My Role" text={project.role} /><CaseList title="Goals" items={caseStudy.goals} /><CaseBlock title="Technology Stack" text={project.stack.join(", ")} /><CaseList title="Key Features" items={project.features} /><CaseBlock title="System Architecture" text={caseStudy.architecture} /><CaseBlock title="Database Design" text={caseStudy.database} /><CaseList title="Challenges" items={caseStudy.challenges} /><CaseList title="Solutions" items={caseStudy.solutions} /></div><div className="mt-8 flex flex-wrap gap-3">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-4 py-3 text-sm font-black text-white"><ExternalLink size={16} />Live Demo</a>}{project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-500/20 bg-white/[0.06] px-4 py-3 text-sm font-black text-white light:border-slate-900/10 light:bg-white light:text-slate-950"><FiGithub />GitHub</a>}</div></div></section>);
+}
+
+function CaseBlock({ title, text }) { if (!text) return null; return <article className="glass rounded-lg p-6"><h2 className="text-xl font-black text-white light:text-slate-950">{title}</h2><p className="mt-3 leading-7 text-slate-300 light:text-slate-600">{text}</p></article>; }
+function CaseList({ title, items }) { if (!items?.length) return null; return <article className="glass rounded-lg p-6"><h2 className="text-xl font-black text-white light:text-slate-950">{title}</h2><ul className="mt-4 grid gap-2 sm:grid-cols-2">{items.map((item) => <li key={item} className="text-sm font-semibold leading-6 text-slate-300 light:text-slate-600"><span className="mr-2 text-blue-300 light:text-blue-700">-</span>{item}</li>)}</ul></article>; }
+function MissingProject() { return <section className="grid min-h-screen place-items-center bg-[#08111f] px-5 text-center text-white"><div><h1 className="text-4xl font-black">Project not found</h1><Link to="/#projects" className="mt-6 inline-flex rounded-xl bg-blue-500 px-5 py-3 font-black text-white">Back to projects</Link></div></section>; }
+
+export default ProjectCaseStudy;

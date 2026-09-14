@@ -1,16 +1,19 @@
+# Mujtaba Sekandari Portfolio
 
-npx plugins add vercel/vercel-plugin
-
-# Mujtaba Portfolio
-
-Advanced personal portfolio website for Mujtaba, a MERN Stack Developer.
+Advanced personal portfolio website for Mujtaba Sekandari, a Full Stack Developer.
 
 ## Tech Stack
 
 - React.js
 - Tailwind CSS
 - HTML, CSS, Bootstrap
+- JavaScript
 - Next.js
+- Node.js
+- Express.js
+- PHP
+- Laravel
+- MongoDB
 - PostgreSQL
 - Framer Motion
 - React Router
@@ -24,10 +27,11 @@ Advanced personal portfolio website for Mujtaba, a MERN Stack Developer.
 - Light mode support
 - Sticky responsive navbar
 - Animated hero typing text
-- Floating tech badges
+- Portrait-first hero section
 - Glassmorphism cards
-- Bento-style layouts
 - Project filter tabs
+- Case-study project cards with problem and build details
+- Professional proof section
 - Section reveal animations
 - Animated counters
 - Contact form validation
@@ -45,6 +49,7 @@ Advanced personal portfolio website for Mujtaba, a MERN Stack Developer.
 src/
   assets/
     mujtaba-portrait.png
+    mujtaba-brand-logo.svg
   components/
     About.jsx
     AnimatedCounter.jsx

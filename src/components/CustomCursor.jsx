@@ -22,7 +22,7 @@ function CustomCursor() {
   return (
     <motion.div
       style={{ x: springX, y: springY }}
-      className={`pointer-events-none fixed z-[95] hidden size-7 rounded-full border border-cyan-300/60 bg-cyan-300/10 mix-blend-screen backdrop-blur-sm transition-opacity duration-200 lg:block ${
+      className={`pointer-events-none fixed z-[95] hidden size-7 rounded-full border border-blue-300/60 bg-blue-300/10 mix-blend-screen backdrop-blur-sm transition-opacity duration-200 lg:block ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     />

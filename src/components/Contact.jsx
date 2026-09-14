@@ -83,26 +83,38 @@ function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="Let us build something professional."
-        text="Send a message for dashboards, APIs, authentication systems, full-stack apps, or frontend development."
+        text="Send a message for dashboards, APIs, full-stack apps, or database-driven business systems."
       />
       <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-[2rem] p-6">
+        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-lg p-6">
           {[
             [Mail, personalInfo.email, `mailto:${personalInfo.email}`],
             [FiGithub, "GitHub profile", personalInfo.github],
             [FiLinkedin, "LinkedIn profile", personalInfo.linkedin],
-            [MapPin, personalInfo.location, "#"]
-          ].map(([Icon, label, href]) => (
-            <a key={label} href={href} className="mb-4 flex items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.05] p-4 text-slate-300 transition hover:bg-white/10 light:border-slate-900/10 light:bg-slate-50 light:text-slate-700">
-              <span className="grid size-12 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200 light:bg-cyan-50 light:text-cyan-700">
-                <Icon size={20} />
-              </span>
-              <span className="font-bold">{label}</span>
-            </a>
-          ))}
+            [MapPin, personalInfo.location, null]
+          ].map(([Icon, label, href]) => {
+            const content = (
+              <>
+                <span className="grid size-12 place-items-center rounded-xl bg-blue-400/10 text-blue-200 light:bg-blue-50 light:text-blue-700">
+                  <Icon size={20} />
+                </span>
+                <span className="font-bold">{label}</span>
+              </>
+            );
+
+            return href ? (
+              <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className="mb-4 flex items-center gap-4 rounded-lg border border-slate-500/20 bg-white/[0.05] p-4 text-slate-300 transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-200 light:border-slate-900/10 light:bg-slate-50 light:text-slate-700">
+                {content}
+              </a>
+            ) : (
+              <div key={label} className="mb-4 flex items-center gap-4 rounded-lg border border-slate-500/20 bg-white/[0.05] p-4 text-slate-300 light:border-slate-900/10 light:bg-slate-50 light:text-slate-700">
+                {content}
+              </div>
+            );
+          })}
         </motion.div>
 
-        <motion.form initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} onSubmit={submitForm} className="glass rounded-[2rem] p-6">
+        <motion.form initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} onSubmit={submitForm} className="glass rounded-lg p-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Name" name="name" value={form.name} error={errors.name} onChange={updateField} />
             <Field label="Email" name="email" type="email" value={form.email} error={errors.email} onChange={updateField} />
@@ -117,14 +129,14 @@ function Contact() {
               value={form.message}
               onChange={updateField}
               rows="6"
-              className="mt-2 w-full resize-none rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-cyan-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
+              className="mt-2 w-full resize-none rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
               placeholder="Tell me about your project..."
             />
             {errors.message && <span className="mt-2 block text-sm font-bold text-rose-300 light:text-rose-600">{errors.message}</span>}
           </label>
-          {success && <p className="mt-4 rounded-2xl bg-emerald-300/10 p-4 text-sm font-black text-emerald-200 light:text-emerald-700">Message sent successfully. Thank you for reaching out.</p>}
-          {formError && <p className="mt-4 rounded-2xl bg-rose-300/10 p-4 text-sm font-black text-rose-200 light:text-rose-700">{formError}</p>}
-          <button type="submit" disabled={isSubmitting} className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-5 font-black text-slate-950 transition hover:bg-cyan-200 disabled:cursor-not-allowed disabled:opacity-60">
+          {success && <p className="mt-4 rounded-xl bg-emerald-300/10 p-4 text-sm font-black text-emerald-200 light:text-emerald-700">Message sent successfully. Thank you for reaching out.</p>}
+          {formError && <p className="mt-4 rounded-xl bg-rose-300/10 p-4 text-sm font-black text-rose-200 light:text-rose-700">{formError}</p>}
+          <button type="submit" disabled={isSubmitting} className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-blue-500 px-5 font-black text-white transition hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-200 disabled:cursor-not-allowed disabled:opacity-60">
             <Send size={18} />
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
@@ -143,8 +155,8 @@ function Field({ label, name, value, onChange, error, type = "text" }) {
         type={type}
         value={value}
         onChange={onChange}
-        className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-cyan-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
-        placeholder={label}
+        className="mt-2 w-full rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
+        placeholder={label} aria-invalid={Boolean(error)}
       />
       {error && <span className="mt-2 block text-sm font-bold text-rose-300 light:text-rose-600">{error}</span>}
     </label>
