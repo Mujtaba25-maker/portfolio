@@ -85,8 +85,8 @@ function Contact() {
         title="Let us build something professional."
         text="Send a message for dashboards, APIs, full-stack apps, or database-driven business systems."
       />
-      <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-lg p-6">
+      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass min-w-0 rounded-lg p-6">
           {[
             [Mail, personalInfo.email, `mailto:${personalInfo.email}`],
             [FiGithub, "GitHub profile", personalInfo.github],
@@ -95,10 +95,10 @@ function Contact() {
           ].map(([Icon, label, href]) => {
             const content = (
               <>
-                <span className="grid size-12 place-items-center rounded-xl bg-blue-400/10 text-blue-200 light:bg-blue-50 light:text-blue-700">
+                <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-blue-400/10 text-blue-200 light:bg-blue-50 light:text-blue-700">
                   <Icon size={20} />
                 </span>
-                <span className="font-bold">{label}</span>
+                <span className="min-w-0 break-words font-bold [overflow-wrap:anywhere]">{label}</span>
               </>
             );
 
@@ -114,8 +114,8 @@ function Contact() {
           })}
         </motion.div>
 
-        <motion.form initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} onSubmit={submitForm} className="glass rounded-lg p-6">
-          <div className="grid gap-4 sm:grid-cols-2">
+        <motion.form initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} onSubmit={submitForm} className="glass min-w-0 rounded-lg p-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Field label="Name" name="name" value={form.name} error={errors.name} onChange={updateField} />
             <Field label="Email" name="email" type="email" value={form.email} error={errors.email} onChange={updateField} />
           </div>
@@ -129,7 +129,7 @@ function Contact() {
               value={form.message}
               onChange={updateField}
               rows="6"
-              className="mt-2 w-full resize-none rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
+              className="mt-2 min-w-0 w-full resize-none rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
               placeholder="Tell me about your project..."
             />
             {errors.message && <span className="mt-2 block text-sm font-bold text-rose-300 light:text-rose-600">{errors.message}</span>}
@@ -155,7 +155,7 @@ function Field({ label, name, value, onChange, error, type = "text" }) {
         type={type}
         value={value}
         onChange={onChange}
-        className="mt-2 w-full rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
+        className="mt-2 min-w-0 w-full rounded-xl border border-slate-500/20 bg-slate-950/50 px-4 py-3 text-white outline-none transition focus:border-blue-300 light:border-slate-900/10 light:bg-white light:text-slate-950"
         placeholder={label} aria-invalid={Boolean(error)}
       />
       {error && <span className="mt-2 block text-sm font-bold text-rose-300 light:text-rose-600">{error}</span>}

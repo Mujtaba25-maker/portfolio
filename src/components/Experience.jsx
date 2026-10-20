@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { experiences } from "../data/portfolioData.js";
+import { experiences, practicalAnalytics } from "../data/portfolioData.js";
 import SectionHeading from "./SectionHeading.jsx";
 
 function Experience() {
@@ -24,6 +24,7 @@ function Experience() {
               </div>
             </motion.article>
           ))}
+          <article className="glass mt-6 rounded-lg p-6 sm:p-8"><p className="analytics-eyebrow">Hands-on project experience</p><h3 className="mt-3 text-2xl font-black">Data preparation, dashboards &amp; reporting</h3><p className="mt-3 leading-7 text-slate-300 light:text-slate-600">Practical analytics work alongside software development, through personal projects and learning.</p><ul className="analytics-features">{practicalAnalytics.map((item) => <li key={item}>{item}</li>)}</ul></article>
         </div>
       </div>
     </section>

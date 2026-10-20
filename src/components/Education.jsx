@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Award, GraduationCap } from "lucide-react";
-import { education } from "../data/portfolioData.js";
+import { education, analyticsTraining } from "../data/portfolioData.js";
 import SectionHeading from "./SectionHeading.jsx";
 
 function Education() {
-  return (<section id="education" className="section-pad mx-auto max-w-7xl scroll-mt-24 px-5 sm:px-8"><SectionHeading eyebrow="Education and Certifications" title="Computer Science studies with a database-focused direction." text="Only verified education and certification details are shown here, without invented university names, GPA, or graduation dates." /><div className="mt-12 grid gap-6 lg:grid-cols-2"><EducationColumn title="Education" icon={GraduationCap} items={education.studies} /><EducationColumn title="Certifications" icon={Award} items={education.certifications} /></div></section>);
+  return (<section id="education" className="section-pad mx-auto max-w-7xl scroll-mt-24 px-5 sm:px-8"><SectionHeading eyebrow="Education and Certifications" title="Computer Science studies with a database-focused direction." text="Only verified education and certification details are shown here, without invented university names, GPA, or graduation dates." /><div className="mt-12 grid gap-6 lg:grid-cols-2"><EducationColumn title="Education" icon={GraduationCap} items={education.studies} /><EducationColumn title="Certifications" icon={Award} items={education.certifications} /></div><div className="mt-6"><EducationColumn title="Training & Practical Learning" icon={GraduationCap} items={[analyticsTraining]} /></div></section>);
 }
 
 function EducationColumn({ title, icon: Icon, items }) {
